@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from 'next/image';
 
 export default function ChatSearchPage() {
     const [query, setQuery] = useState("");
@@ -84,7 +85,7 @@ export default function ChatSearchPage() {
                         {typeof photo !== "string" || photo === "画像なし" ? (
                             <p>画像なし</p>
                         ) : (
-                            <img src={photo} alt="写真なし" className="w-72 rounded-lg shadow" />
+                            <Image src={photo} alt="写真なし" layout="fill" className="w-72 rounded-lg shadow" />
                         )}
                     </div>
                 </div>

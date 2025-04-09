@@ -14,6 +14,7 @@ export default function RegisterPage() {
             const data = await res.json();
             alert(data.message);
         } catch (err) {
+            console.error(err); // Use err or ignore explicitly
             alert("位置データの更新に失敗しました");
         }
         setLoadingLocation(false);
