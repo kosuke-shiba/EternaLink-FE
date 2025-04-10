@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import Image from 'next/image';
 
 export default function ChatSearchPage() {
@@ -48,6 +49,7 @@ export default function ChatSearchPage() {
     };
 
     return (
+        <Suspense fallback={<div>Loading...</div>}>
         <main className="min-h-screen p-6 max-w-xl mx-auto bg-gray-50">
             <h2 className="text-xl font-bold mb-4">故人とチャット</h2>
 
@@ -91,5 +93,6 @@ export default function ChatSearchPage() {
                 </div>
             )}
         </main>
+        </Suspense>
     );
 }
