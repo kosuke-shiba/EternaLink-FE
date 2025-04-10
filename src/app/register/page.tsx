@@ -29,6 +29,7 @@ export default function RegisterPage() {
             const data = await res.json();
             alert(data.message);
         } catch (err) {
+            console.error(err); // Use err or ignore explicitly
             alert("日記vectorの更新に失敗しました");
         }
         setLoadingVector(false);
