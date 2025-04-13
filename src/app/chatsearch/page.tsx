@@ -50,49 +50,49 @@ export default function ChatSearchPage() {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-        <main className="min-h-screen p-6 max-w-xl mx-auto bg-gray-50">
-            <h2 className="text-xl font-bold mb-4">故人とチャット</h2>
+            <main className="min-h-screen p-6 max-w-xl mx-auto bg-gray-50">
+                <h2 className="text-xl font-bold mb-4">故人とチャット</h2>
 
-            <div className="flex gap-2 mb-6">
-                <input
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="メッセージを入力"
-                    className="flex-1 border p-2 rounded"
-                />
-                <button
-                    onClick={handleSubmit}
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                    発言
-                </button>
-            </div>
-
-            {userMessage && (
-                <div className="mb-4">
-                    <p className="text-sm font-semibold text-right text-gray-600">あなたの発言</p>
-                    <div className="bg-blue-100 text-right p-3 rounded-xl max-w-[80%] ml-auto">
-                        {userMessage}
-                    </div>
+                <div className="flex gap-2 mb-6">
+                    <input
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="メッセージを入力"
+                        className="flex-1 border p-2 rounded"
+                    />
+                    <button
+                        onClick={handleSubmit}
+                        className="bg-[#785d13] text-white px-4 py-2 rounded"
+                    >
+                        発言
+                    </button>
                 </div>
-            )}
 
-            {botMessage && (
-                <div className="mb-4">
-                    <p className="text-sm font-semibold text-left text-gray-600">故人からの言葉</p>
-                    <div className="bg-green-100 text-left p-3 rounded-xl max-w-[80%] mr-auto">
-                        {botMessage}
+                {userMessage && (
+                    <div className="mb-4">
+                        <p className="text-sm font-semibold text-right text-gray-600">あなたの発言</p>
+                        <div className="bg-yellow-50 text-right p-3 rounded-xl max-w-[80%] ml-auto border-1 border-[#785d13]">
+                            {userMessage}
+                        </div>
                     </div>
-                    <div className="mt-2 text-left text-sm text-gray-600">
-                        {typeof photo !== "string" || photo === "画像なし" ? (
-                            <p>画像なし</p>
-                        ) : (
-                            <Image src={photo} alt="写真なし" width={300} height={300} />
-                        )}
+                )}
+
+                {botMessage && (
+                    <div className="mb-4">
+                        <p className="text-sm font-semibold text-left text-gray-600">故人からの言葉</p>
+                        <div className="bg-yellow-50 text-left p-3 rounded-xl max-w-[80%] mr-auto border-1 border-[#785d13]">
+                            {botMessage}
+                        </div>
+                        <div className="mt-2 text-left text-sm text-gray-600">
+                            {typeof photo !== "string" || photo === "画像なし" ? (
+                                <p>画像なし</p>
+                            ) : (
+                                <Image src={photo} alt="写真なし" width={300} height={300} />
+                            )}
+                        </div>
                     </div>
-                </div>
-            )}
-        </main>
+                )}
+            </main>
         </Suspense>
     );
 }

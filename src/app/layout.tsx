@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body className="min-h-screen bg-gray-100 text-gray-900">
         {/* アプリ名ヘッダー */}
-        <header className="bg-blue-600 text-white text-xl font-bold p-4 shadow">
+        <header className="bg-[#785d13] text-white text-xl font-bold p-4 shadow flex justify-center">
           EternaLink
         </header>
 

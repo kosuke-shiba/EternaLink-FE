@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <main className="p-6 bg-gray-50 max-w-xl mx-auto min-h-screen space-y-2">
-      <h1 className="text-xl font-bold mb-4">ホーム</h1>
+      <h1 className="text-xl font-bold mb-4 text-black">ホーム</h1>
 
         <div className="flex flex-col gap-2">
           <input
@@ -29,27 +29,27 @@ export default function Home() {
             placeholder="family_id（開発時は「2」）"
             value={familyId}
             onChange={(e) => setFamilyId(e.target.value)}
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full placeholder-gray-500"
           />
           <input
             type="number"
             placeholder="user_id（開発時は「6」）"
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full placeholder-gray-500"
           />
         </div>
 
         <div className="flex flex-col gap-2">
           <button
             onClick={handleChatSearch}
-            className="p-2 bg-blue-500 text-white rounded w-full"
+            className="p-2 bg-[#785d13] text-white rounded w-full"
           >
             故人とチャット
           </button>
           <button
             onClick={handleRegister}
-            className="p-2 bg-blue-500 text-white rounded w-full"
+            className="p-2 bg-[#785d13] text-white rounded w-full"
           >
             データ登録
           </button>
