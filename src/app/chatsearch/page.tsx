@@ -1,7 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 import Image from 'next/image';
 
 export default function ChatSearchPage() {
