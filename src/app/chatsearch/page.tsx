@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Image from 'next/image';
+//import Image from 'next/image';
 
 export default function ChatSearchPage() {
     const [query, setQuery] = useState("");
@@ -10,7 +10,7 @@ export default function ChatSearchPage() {
     const [photo, setPhoto] = useState<string | null>(null);
     const [familyId, setFamilyId] = useState<number | null>(null);
     const [userId, setUserId] = useState<number | null>(null);
-
+    
     const searchParams = useSearchParams();
 
     useEffect(() => {
@@ -48,7 +48,6 @@ export default function ChatSearchPage() {
     };
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
             <main className="min-h-screen p-6 max-w-xl mx-auto bg-gray-50">
                 <h2 className="text-xl font-bold mb-4">故人とチャット</h2>
 
@@ -86,12 +85,12 @@ export default function ChatSearchPage() {
                             {typeof photo !== "string" || photo === "画像なし" ? (
                                 <p>画像なし</p>
                             ) : (
-                                <Image src={photo} alt="写真なし" width={300} height={300} />
+                                <img src={photo} alt="写真なし" className="w-72 rounded-lg shadow" />
+                                //<Image src={photo} alt="写真なし" width={300} height={300} />
                             )}
                         </div>
                     </div>
                 )}
             </main>
-        </Suspense>
     );
 }
