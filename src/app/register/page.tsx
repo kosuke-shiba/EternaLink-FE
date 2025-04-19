@@ -8,7 +8,7 @@ export default function RegisterPage() {
     const handleUpdateLocation = async () => {
         setLoadingLocation(true);
         try {
-            const res = await fetch("http://localhost:8000/update-location", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/update-location`, {
                 method: "POST",
             });
             const data = await res.json();
@@ -23,7 +23,7 @@ export default function RegisterPage() {
     const handleUpdateVector = async () => {
         setLoadingVector(true);
         try {
-            const res = await fetch("http://localhost:8000/update-vector", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/update-vector`, {
                 method: "POST",
             });
             const data = await res.json();
@@ -42,7 +42,7 @@ export default function RegisterPage() {
             <div className="flex flex-col space-y-2">
                 <button
                     onClick={handleUpdateLocation}
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    className="bg-[#785d13] text-white px-4 py-2 rounded"
                     disabled={loadingLocation}
                 >
                     {loadingLocation ? "更新中..." : "位置データ更新"}
@@ -50,7 +50,7 @@ export default function RegisterPage() {
 
                 <button
                     onClick={handleUpdateVector}
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    className="bg-[#785d13] text-white px-4 py-2 rounded"
                     disabled={loadingVector}
                 >
                     {loadingVector ? "更新中..." : "日記vector更新"}
