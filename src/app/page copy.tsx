@@ -3,51 +3,23 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-//  const [familyId, setFamilyId] = useState("");
-//  const [userId, setUserId] = useState("");
+  const [familyId, setFamilyId] = useState("");
+  const [userId, setUserId] = useState("");
   const router = useRouter();
 
-  const handleLogin = () => {
-    router.push('/login');
+  const handleChatSearch = () => {
+    if (!familyId || !userId) {
+      alert("family_id、user_idを入力してください。");
+      return;
+    }
+    router.push(`/chatsearch?family_id=${familyId}&user_id=${userId}`);
   };
 
-  const handleSettings = () => {
-    router.push('/settings');
+  const handleRegister = () => {
+    router.push(`/register?family_id=${familyId}&user_id=${userId}`);
   };
-
-//  const handleRegister = () => {
-//    router.push(`/register?family_id=${familyId}&user_id=${userId}`);
-//  };
 
   return (
-    <main className="p-6 bg-gray-50 max-w-xl mx-auto min-h-screen flex flex-col justify-center items-center space-y-6">
-      {/* アプリケーション名 */}
-      <h1 className="text-4xl font-bold text-black">EternaLink</h1>
-
-      {/* ロゴ画像 */}
-      <img
-        src="/eternalink.png"
-        alt="EternaLink Logo"
-        className="w-32 h-32 object-contain"
-      />
-
-      {/* ボタン */}
-      <div className="flex flex-col gap-4 mt-24">
-        <button
-          onClick={handleLogin}
-          className="p-2 bg-[#785d13] text-white rounded-full w-64"
-        >
-          ログイン
-        </button>
-        <button
-          onClick={handleSettings}
-          className="p-2 bg-[#785d13] text-white rounded-full w-64"
-        >
-          設定
-        </button>
-      </div>
-    </main>
-/*
     <main className="p-6 bg-gray-50 max-w-xl mx-auto min-h-screen space-y-2">
       <h1 className="text-xl font-bold mb-4 text-black">ホーム</h1>
 
@@ -83,6 +55,5 @@ export default function Home() {
           </button>
         </div>
     </main>
-*/
-    );
+  );
 }
