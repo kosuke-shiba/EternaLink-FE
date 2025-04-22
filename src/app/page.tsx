@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+//import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Home() {
 //  const [familyId, setFamilyId] = useState("");
@@ -25,10 +26,13 @@ export default function Home() {
       <h1 className="text-4xl font-bold text-black">EternaLink</h1>
 
       {/* ロゴ画像 */}
-      <img
+      <Image
         src="/eternalink.png"
         alt="EternaLink Logo"
-        className="w-32 h-32 object-contain"
+        width={128}              // w-32 相当
+        height={128}             // h-32 相当
+        className="object-contain"
+        priority                 // LCP最適化
       />
 
       {/* ボタン */}
