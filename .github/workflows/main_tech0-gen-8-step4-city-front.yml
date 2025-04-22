@@ -38,9 +38,16 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-
+      - name: Copy artifact for deployment job    # 変更点➀
+        run: |
+          mkdir deploy
+          cp -r ./.next/standalone/. ./deploy
+          cp -r ./public ./deploy
+          cp -r ./.next/static/. ./deploy/.next/static
+  
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip release.zip ./deploy -r    # 変更点➁
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -70,5 +77,5 @@ jobs:
         with:
           app-name: 'tech0-gen-8-step4-city-front'
           slot-name: 'Production'
-          package: .
+          package: ./deploy    # 変更点➂
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E7D95251D34E49078DC4D7B31C39F6F2 }}
