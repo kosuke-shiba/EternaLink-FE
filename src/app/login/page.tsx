@@ -28,7 +28,8 @@ const handleLogin = async (e: React.FormEvent) => {
       // ログイン成功時、ダッシュボードへ遷移
       router.push("/dashboard");
     }
-  } catch (error) {
+  } catch (err) {
+    console.error(err);
     setError("ログイン情報が間違っています。再度確認してください。");
   }
 };
