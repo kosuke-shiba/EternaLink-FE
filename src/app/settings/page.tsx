@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+//import { useState } from "react";
 
-export default function RegisterPage() {
+export default function SettingsPage() {
     const [loadingLocation, setLoadingLocation] = useState(false);
     const [loadingVector, setLoadingVector] = useState(false);
 

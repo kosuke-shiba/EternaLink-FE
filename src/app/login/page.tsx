@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Login() {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [familyId, setFamilyId] = useState("");
+  //const [familyId, setFamilyId] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
@@ -28,7 +28,7 @@ const handleLogin = async (e: React.FormEvent) => {
       // ログイン成功時、ダッシュボードへ遷移
       router.push("/dashboard");
     }
-  } catch (err) {
+  } catch (error) {
     setError("ログイン情報が間違っています。再度確認してください。");
   }
 };
