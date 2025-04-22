@@ -21,8 +21,10 @@ const handleLogin = async (e: React.FormEvent) => {
   }
 
   try {
-    // バックエンドAPIにログイン情報を送信
-    const response = await axios.post("/login", { userId, password });
+    // バックエンドAPIにログイン情報を送信>>取り敢えずGETで
+    //const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE}/login`, { userId, password });
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE}/login`);
+    console.log("テスト", response.data);
 
     if (response.status === 200) {
       // ログイン成功時、ダッシュボードへ遷移
