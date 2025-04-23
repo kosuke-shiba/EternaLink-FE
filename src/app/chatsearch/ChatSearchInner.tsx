@@ -50,7 +50,7 @@ export default function ChatSearchInner() {
 
     return (
         <main className="min-h-screen p-6 max-w-xl mx-auto bg-gray-50">
-            <h2 className="text-xl font-bold mb-4">故人とチャット</h2>
+            <h2 className="text-xl font-bold mb-4">エコー{familyId}とチャット</h2>
 
             <div className="flex gap-2 mb-6">
                 <input
@@ -78,7 +78,7 @@ export default function ChatSearchInner() {
 
             {botMessage && (
                 <div className="mb-4">
-                    <p className="text-sm font-semibold text-left text-gray-600">故人からの言葉</p>
+                    <p className="text-sm font-semibold text-left text-gray-600">天国からの言葉</p>
                     <div className="bg-yellow-50 text-left p-3 rounded-xl max-w-[80%] mr-auto border-1 border-[#785d13]">
                         {botMessage}
                     </div>
