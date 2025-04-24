@@ -43,14 +43,14 @@ const handleLogin = async (e: React.FormEvent) => {
       <form onSubmit={handleLogin} className="flex flex-col gap-4">
         <input
           type="text"
-          placeholder="ユーザーID"
+          placeholder="ユーザーID（6を入れて下さい）"
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
           className="border p-2 rounded w-full placeholder-gray-500"
         />
         <input
           type="password"
-          placeholder="パスワード"
+          placeholder="パスワード（何でも良い）"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="border p-2 rounded w-full placeholder-gray-500"
